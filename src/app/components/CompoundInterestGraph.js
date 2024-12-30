@@ -16,8 +16,6 @@ const CompoundInterestGraph = () => {
   const [contributionFrequency, setContributionFrequency] = useState(12);
   const [finalBalance, setFinalBalance] = useState(0);
 
-  const currentYear = new Date().getFullYear();
-
   const formatWithCommas = (value) =>
     value.toLocaleString(undefined, { maximumFractionDigits: 2 });
 
@@ -75,9 +73,13 @@ const CompoundInterestGraph = () => {
     }
 
     const ctx = chartRef.current.getContext('2d');
-
     const midYear = Math.floor(Math.round((yearsOfGrowth || 1) / 2));
-    const yearsArray = [currentYear, currentYear + midYear, currentYear + (yearsOfGrowth || 1)];
+    const year = new Date().getFullYear();
+
+    const labelsArray = yearsOfGrowth <= 1 
+  ? ['Now', String(year), String(year + yearsOfGrowth)] 
+  : ['Now', String(year + midYear), String(year + yearsOfGrowth)];
+
 
     // Calculate the compound interest growth
     const amountsArray = [
@@ -99,7 +101,7 @@ const CompoundInterestGraph = () => {
     const chartInstance = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: yearsArray,
+        labels: labelsArray,
         datasets: [
           {
             label: 'Total Interest',
@@ -190,6 +192,7 @@ const CompoundInterestGraph = () => {
           <label className={styles.label}>Years of Growth:</label>
           <input
             type="text"
+            min={1}
             value={yearsOfGrowth}
             onChange={handleInputChange(setYearsOfGrowth)}
             className={styles.inputBox}
@@ -253,13 +256,13 @@ const CompoundInterestGraph = () => {
           <h2>Total Balance</h2>
           <h1
             style={{
-              color: finalBalance >= 0 ? '#5c9e5e' : '#c41616',
+              color: finalBalance >= initialDeposit ? 'green' : 'red',
             }}
           >
-            ${finalBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            {finalBalance && `$${formatWithCommas(finalBalance)}`}
           </h1>
         </div>
-        <canvas ref={chartRef} className={styles.chartCanvas}></canvas>
+        <canvas id="chart" ref={chartRef} />
       </div>
     </div>
   );

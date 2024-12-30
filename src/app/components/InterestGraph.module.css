@@ -75,10 +75,11 @@
 @media (max-width: 700px) {
   .graphContainer {
     width: 95vw;
+    max-width: 95vw;
   }
 
   .inputGroup {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
 }
