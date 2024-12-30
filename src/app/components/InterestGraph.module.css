@@ -1,0 +1,84 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+.form2 {
+    display: flex;
+    width: 1300px;
+    min-height: fit-content;
+    background-color: #f9f9f9;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .graphContainer {
+    border: 1px solid grey;
+    padding: 5px;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 1300px;
+    min-height: fit-content;
+    border-radius: 8px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+  }
+  
+  .inputGroup label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
+
+@media (max-width: 700px) {
+  .graphContainer {
+    width: 95vw;
+  }
+
+  .inputGroup {
+    display: flex;
+  flex-direction: column;
+  }
+}

@@ -1,0 +1,224 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  grid-template-rows: 20px 1fr 20px;
+  align-items: center;
+  justify-items: center;
+  min-height: 100svh;
+  padding: 80px;
+  gap: 64px;
+  font-family: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+
+
+  .label, .logo, .subtitle, .subheader {
+    color: black;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-row-start: 2;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: none;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.logo {
+  margin: 35px 0 35px 0;
+  padding: 0;
+}
+
+.subtitle {
+  margin-left: 133px;
+  color: rgb(127, 212, 240);
+  font-size: 18px;
+}
+
+.inputBox {
+  width: 150px;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 13px;
+}
+
+.inputRadioBox {
+  width: 213px;
+  margin: 13px;
+  border-radius: 7px;
+  padding: 5px;
+  font-weight: 700;
+  background-color: white;
+  color: black;
+}
+
+.subheader {
+  margin: 13px 0 39px 0;
+}
+
+.footer {
+  margin: 78px 0 0 0;
+  color: grey;
+}
+
+.primaryContainer {
+  background-color: none;
+}
+
+/* LoadingScreen.module.css */
+
+.loadingScreen {
+    position: fixed; /* Fixes the loading screen to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's on top of the content */
+    animation: fadeOut 3s forwards;
+  }
+  
+  .loadingScreen h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  
+  .content {
+    position: relative; /* Content stays in its normal flow */
+    opacity: 1; /* Start with full opacity */
+    transition: opacity 1s ease-in-out;
+    padding: 20px;
+    color: white;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .content.hidden {
+    opacity: 0; /* Initially hidden */
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+/**/
+
+/* LoadingScreen.module.css */
+
+.loadingScreen {
+  position: fixed; /* Fixes the loading screen to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of the content */
+  animation: fadeOut 3s forwards;
+}
+
+.loadingScreen h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.content {
+  position: relative; /* Content stays in its normal flow */
+  opacity: 1; /* Start with full opacity */
+  transition: opacity 1s ease-in-out;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.content.hidden {
+  opacity: 0; /* Initially hidden */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .primaryContainer {
+    max-width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chartCanvas {
+    background-color: red;
+    height: 600px;
+    width: 100%;
+    max-width: 99vw;
+  }
+}
