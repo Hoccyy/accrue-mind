@@ -65,6 +65,7 @@
 .logo {
   margin: 35px 0 35px 0;
   padding: 0;
+  font-size: 26px;
 }
 
 .subtitle {
@@ -95,7 +96,7 @@
 }
 
 .footer {
-  margin: 78px 0 0 0;
+  margin: 169px 0 0 0;
   color: grey;
 }
 
@@ -106,7 +107,7 @@
 /* LoadingScreen.module.css */
 
 .loadingScreen {
-    position: fixed; /* Fixes the loading screen to the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -114,8 +115,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 9999; /* Ensure it's on top of the content */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
     animation: fadeOut 3s forwards;
   }
   
@@ -125,8 +126,8 @@
   }
   
   .content {
-    position: relative; /* Content stays in its normal flow */
-    opacity: 1; /* Start with full opacity */
+    position: relative;
+    opacity: 1;
     transition: opacity 1s ease-in-out;
     padding: 20px;
     color: white;
@@ -138,7 +139,7 @@
   }
   
   .content.hidden {
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
   }
   
   @keyframes fadeOut {
@@ -157,9 +158,8 @@
 /**/
 
 /* LoadingScreen.module.css */
-
 .loadingScreen {
-  position: fixed; /* Fixes the loading screen to the viewport */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -168,8 +168,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 9999; /* Ensure it's on top of the content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   animation: fadeOut 3s forwards;
 }
 
@@ -179,8 +179,8 @@
 }
 
 .content {
-  position: relative; /* Content stays in its normal flow */
-  opacity: 1; /* Start with full opacity */
+  position: relative;
+  opacity: 1;
   transition: opacity 1s ease-in-out;
   padding: 20px;
   margin: 10px;
@@ -189,7 +189,7 @@
 }
 
 .content.hidden {
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
 }
 
 @keyframes fadeOut {
